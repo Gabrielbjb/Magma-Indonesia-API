@@ -16,7 +16,7 @@ At the moment, Magma Indonesia has not opened the API for everyone. Not only tha
 There are two codes that you can use:
 
 ## Level only
-This code will show you the level of the volcano and the website link this code is used to get info quickly
+This code will show you the level of the volcano and the website link! Use this code is if you want to get info quickly
 ```python
 import Magma
 print(Magma.magmalevelonly())
