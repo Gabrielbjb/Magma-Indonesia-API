@@ -6,7 +6,7 @@ Welcome to Magma-Indonesia-API! This code can give you information about volcano
 If you want to try this code, you can download it by writing this on CMD or PowerShell
 ### Stable
 ```powershell
-PS> -
+PS> pip install Magma-Indonesia-API==1.0.1
 ```
 
 # Why i made this?
@@ -16,7 +16,7 @@ At the moment, Magma Indonesia has not opened the API for everyone. Not only tha
 There are two codes that you can use:
 
 ## Level only
-This code will show you the level of the volcano and the website link! Use this code is if you want to get info quickly
+This code will show you the level of the volcano and the website link! Use this code if you want to get info quickly
 ```python
 import Magma
 print(Magma.magmalevelonly())
