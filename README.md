@@ -3,14 +3,20 @@
 Welcome to Magma-Indonesia-API! This code can give you information about volcano in Indonesia! We scraped the 'https://magma.esdm.go.id/v1/gunung-api/tingkat-aktivitas website to get this information.
 
 ## Download
-If you want to try this code, you can download it by writing this on CMD or PowerShell
+If you want to try this code, you can download it by writing this on CMD, PowerShell or Terminal
 ### Stable
 ```powershell
 PS> pip install Magma-Indonesia-API==1.0.1
 ```
-
-# Why i made this?
-At the moment, Magma Indonesia has not opened the API for everyone. Not only that, they also don't make the application for IOS devices, and the Magma Indonesia app on Playstore often has problems. So I made this for developers and researchers to get or create information for everyone.
+###Requiment
+Aiohttp
+```powershell
+PS> pip pip install aiohttp
+```
+beautifulsoup
+```powershell
+PS> pip install beautifulsoup4
+```
 
 # How to use it
 There are two codes that you can use:
