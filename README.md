@@ -9,9 +9,9 @@ If you want to try this code, you can download it by writing this on CMD, PowerS
 PS> pip install Magma-Indonesia-API==1.0.1
 ```
 ### Requiment
-Aiohttp
+requests
 ```powershell
-PS> pip pip install aiohttp
+PS> pip install requests
 ```
 beautifulsoup
 ```powershell
