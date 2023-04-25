@@ -8,7 +8,7 @@ If you want to try this code, you can download it by writing this on CMD, PowerS
 ```powershell
 PS> pip install Magma-Indonesia-API==1.0.1
 ```
-###Requiment
+### Requiment
 Aiohttp
 ```powershell
 PS> pip pip install aiohttp
