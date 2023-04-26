@@ -11,7 +11,7 @@ PS> pip install Magma-Indonesia-API==1.0.1
 ### Requirement
 Aiohttp
 ```powershell
-PS> pip pip install aiohttp
+PS> pip install aiohttp
 ```
 beautifulsoup
 ```powershell
