@@ -42,8 +42,11 @@ def magmadetail():
             detailresult = {}
             web = asyncio.run(link(result[i][j]["link"]))
             HTMLResult = BeautifulSoup(web, "html.parser").find('div', class_="col-lg-12")
-            detailresult["title"] = HTMLResult.find('h5', class_="card-title tx-dark tx-medium mg-b-10").get_text(strip=True)
-            detailresult["author"] = (HTMLResult.find('p', class_="card-subtitle tx-normal mg-b-15").get_text(strip=True)).split(", ")[1]
+            titleanddate = (HTMLResult.find('h5', class_="card-title tx-dark tx-medium mg-b-10").get_text(strip=True)).split(", ")
+            detailresult["title"] = titleanddate[0]
+            detailresult["date"] = titleanddate[1]
+            detailresult["period"] = titleanddate[2].replace("periode ","")
+            detailresult["author"] = (HTMLResult.find('p', class_="card-subtitle tx-normal mg-b-15").get_text(strip=True)).split(",  ")[1]
             detailresult["location"] = HTMLResult.find('p', class_="col-lg-6 pd-0").get_text(strip=True)
             try:
                 asyncio.run(link(HTMLResult.find('img', class_="img-fluid")['src']))
@@ -53,8 +56,8 @@ def magmadetail():
             detailresult["visual_observation"] = (HTMLResult.find('div', class_="media-body").find('p')).get_text(strip=True)
             detailresult["other_description"] = (HTMLResult.find('div', class_="media pd-30").find('p')).get_text(strip=True)
             sameclass = HTMLResult.find_all('div', class_="card pd-30")
-            detailresult["climatology"] = sameclass[0].get_text(strip=True)
-            detailresult["seismic_observation"] = sameclass[1].get_text(strip=True)
-            detailresult["recommendation"] = sameclass[2].get_text(strip=True)
+            detailresult["climatology"] = (sameclass[0].find('p')).get_text(strip=True)
+            detailresult["seismic_observation"] = (sameclass[1].find('p')).get_text(strip=True)
+            detailresult["recommendation"] = (((sameclass[2].find('p')).get_text(strip=True, separator='\n')).split("\n"))
             result[i][j]["detail"] = detailresult
     return result
