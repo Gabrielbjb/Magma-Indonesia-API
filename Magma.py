@@ -1,4 +1,4 @@
-import aiohttp, asyncio, time
+import aiohttp, asyncio
 from bs4 import BeautifulSoup
 
 async def link(link):
