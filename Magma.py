@@ -35,7 +35,7 @@ def magmalevelonly():
                 result[judul2] = {}
     return result
 
-def magmaeruption(page = "all"):
+def magmaeruption(page = 1):
     result = {}
     web = asyncio.run(link("https://magma.esdm.go.id/v1/gunung-api/informasi-letusan"))
     HTMLResult = BeautifulSoup(web, "html.parser") 
@@ -54,10 +54,9 @@ def magmaeruption(page = "all"):
     month = {"Januari":"January","Februari":"February","Maret":"March","April":"April","Mei":"May","Juni":"June","Juli":"July","Agustus":"August","September":"September","Oktober":"October","November":"November","Desember":"December"}
     day = {"Senin":"Monday","Selasa":"Tuesday","Rabu":"Wednesday","Kamis":"Thursday","Jumat":"Friday","Sabtu":"Saturday","Minggu":"Sunday"}
     judul = ""
-    checking = 1
+    checking = 0
     while checking < totalpage:
-        print("wow")
-        web = asyncio.run(link(f"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan?page={checking}"))
+        web = asyncio.run(link(f"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan?page={checking+1}"))
         HTMLResult = BeautifulSoup(web, "html.parser") 
         content = HTMLResult.find_all('div', class_="timeline-item")
         for i in content:
@@ -69,16 +68,13 @@ def magmaeruption(page = "all"):
                 judul = f"{date[1]}-{date[0]}-{date[2]}"
                 if judul not in result:
                     result[judul] = {}
-                #print(judul,"wp")
             else:
-                #print("================================================================================================================================\n")
                 clock = i.find('div', class_="timeline-time").get_text().split(" ")
 
                 if clock[1] in result[judul].keys():
                     result[judul][clock[1]].update({clock[0]: {"volcano_name": i.find('p', class_="timeline-title").get_text()}})
                 else:
                     result[judul][clock[1]] = {clock[0]:{"volcano_name": i.find('p', class_="timeline-title").get_text()}}
-
                 result[judul][clock[1]][clock[0]].update({"author": i.find_next(class_="timeline-author").get_text().replace("Dibuat oleh ","")})
                 result[judul][clock[1]][clock[0]].update({"information": i.find('p', class_="timeline-text").get_text(strip=True).replace("  ","")})
                 result[judul][clock[1]][clock[0]].update({"image": i.find('img', class_="bd img-fluid")['src']})
