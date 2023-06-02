@@ -6,7 +6,7 @@ Welcome to Magma-Indonesia-API! This code can give you information about volcano
 If you want to try this code, you can download it by writing this on CMD, PowerShell or Terminal
 ### Stable
 ```powershell
-PS> pip install Magma-Indonesia-API==1.0.1
+PS> pip install Magma-Indonesia-API
 ```
 ### Requirement
 Aiohttp
