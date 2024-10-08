@@ -19,7 +19,7 @@ PS> pip install beautifulsoup4
 ```
 
 # How to use it
-There are two codes that you can use:
+There are three codes that you can use:
 
 ## Level only
 This code will show you the level of the volcano and the website link! Use this code if you want to get info quickly
