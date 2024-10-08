@@ -9,9 +9,9 @@ If you want to try this code, you can download it by writing this on CMD, PowerS
 PS> pip install Magma-Indonesia-API
 ```
 ### Requirement
-Aiohttp
+requests
 ```powershell
-PS> pip install aiohttp
+PS> pip install requests
 ```
 beautifulsoup
 ```powershell
@@ -314,13 +314,147 @@ The output will look like this:
    }
 }
 ```
+## Eruption 
+To get information about the eruption, you can use the code below
+
+```python
+import Magma
+print(Magma.magmaeruption())
+```
+
+The output will look like this:
+```json
+{
+   "10-08-2024":{
+      "WIB":{
+         "09:57":{
+            "volcano_name":"Semeru",
+            "author":"Liswanto, A.P.",
+            "information":"Terjadi erupsi G. Semeru pada hari Selasa, 08 Oktober 2024, pukul 09:57 WIB. Visual letusan tidak teramati.\n\nSaat laporan ini dibuat, erupsi masih berlangsung.",
+            "image":"",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/ee67e951-8520-11ef-8afe-005056b54356/show"
+         },
+         "09:40":{
+            "volcano_name":"Semeru",
+            "author":"Liswanto, A.P.",
+            "information":"Terjadi erupsi G. Semeru pada hari Selasa, 08 Oktober 2024, pukul 09:40 WIB. Visual letusan tidak teramati.\n\nSaat laporan ini dibuat, erupsi masih berlangsung.",
+            "image":"",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/897b4ef2-851e-11ef-8afe-005056b54356/show"
+         },
+         "08:13":{
+            "volcano_name":"Semeru",
+            "author":"Liswanto, A.P.",
+            "information":"Terjadi erupsi G. Semeru pada hari Selasa, 08 Oktober 2024, pukul 08:13 WIB. Visual letusan tidak teramati.\n\nSaat laporan ini dibuat, erupsi masih berlangsung.",
+            "image":"",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/51c434ae-8512-11ef-8afe-005056b54356/show"
+         },
+         "08:09":{
+            "volcano_name":"Semeru",
+            "author":"Liswanto, A.P.",
+            "information":"Terjadi erupsi G. Semeru pada hari Selasa, 08 Oktober 2024, pukul 08:09 WIB. Visual letusan tidak teramati.\n\nSaat laporan ini dibuat, erupsi masih berlangsung.",
+            "image":"",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/d95f366e-8511-11ef-8afe-005056b54356/show"
+         }
+      }
+   },
+   "10-07-2024":{
+      "WITA":{
+         "17:52":{
+            "volcano_name":"Lewotobi Laki-laki",
+            "author":"Emanuel Rofinus Bere, A.Md.Kom.",
+            "information":"Terjadi erupsi G. Lewotobi Laki-laki pada hari Senin, 07 Oktober 2024, pukul 17:52 WITA dengan tinggi kolom abu teramati ± 1000 m di atas puncak (± 2584 m di atas permukaan laut). Kolom abu teramati berwarna kelabu dengan intensitas tebal ke arah barat dan barat laut.\n\nErupsi ini terekam di seismograf dengan amplitudo maksimum 7.4 mm dan durasi 653 detik.",
+            "image":"https://magma.vsi.esdm.go.id/img/crs/VEN_LWK20241007171319.png",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/c6f57e4b-8494-11ef-8afe-005056b54356/show"
+         },
+         "12:15":{
+            "volcano_name":"Lewotobi Laki-laki",
+            "author":"Yohanes Kolli Sorywutun, A.Md.",
+            "information":"Terjadi erupsi G. Lewotobi Laki-laki pada hari Senin, 07 Oktober 2024, pukul 12:15 WITA dengan tinggi kolom abu teramati ± 1000 m di atas puncak (± 2584 m di atas permukaan laut). Kolom abu teramati berwarna kelabu dengan intensitas tebal ke arah barat daya.\n\nSaat laporan ini dibuat, erupsi masih berlangsung.",
+            "image":"https://magma.vsi.esdm.go.id/img/crs/VEN_LWK20241007112402.png",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/fb7c6070-8463-11ef-8afe-005056b54356/show"
+         },
+         "11:35":{
+            "volcano_name":"Lewotobi Laki-laki",
+            "author":"Yohanes Kolli Sorywutun, A.Md.",
+            "information":"Terjadi erupsi G. Lewotobi Laki-laki pada hari Senin, 07 Oktober 2024, pukul 11:35 WITA dengan tinggi kolom abu teramati ± 700 m di atas puncak (± 2284 m di atas permukaan laut). Kolom abu teramati berwarna kelabu dengan intensitas tebal ke arah barat daya.\n\nErupsi ini terekam di seismograf dengan amplitudo maksimum 5.1 mm dan durasi 790 detik.",
+            "image":"https://magma.vsi.esdm.go.id/img/crs/VEN_LWK20241007105159.png",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/80e90af8-845f-11ef-8afe-005056b54356/show"
+         },
+         "05:03":{
+            "volcano_name":"Lewotobi Laki-laki",
+            "author":"Emanuel Rofinus Bere, A.Md.Kom.",
+            "information":"Terjadi erupsi G. Lewotobi Laki-laki pada hari Senin, 07 Oktober 2024, pukul 05:03 WITA dengan tinggi kolom abu teramati ± 800 m di atas puncak (± 2384 m di atas permukaan laut). Kolom abu teramati berwarna kelabu dengan intensitas tebal ke arah barat daya.\n\nErupsi ini terekam di seismograf dengan amplitudo maksimum 4.4 mm dan durasi 279 detik.",
+            "image":"https://magma.vsi.esdm.go.id/img/crs/VEN_LWK20241007041144.png",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/974d805d-8427-11ef-8afe-005056b54356/show"
+         },
+         "00:56":{
+            "volcano_name":"Lewotobi Laki-laki",
+            "author":"Emanuel Rofinus Bere, A.Md.Kom.",
+            "information":"Terjadi erupsi G. Lewotobi Laki-laki pada hari Senin, 07 Oktober 2024, pukul 00:56 WITA dengan tinggi kolom abu teramati ± 800 m di atas puncak (± 2384 m di atas permukaan laut). Kolom abu teramati berwarna kelabu dengan intensitas tebal ke arah barat daya.\n\nErupsi ini terekam di seismograf dengan amplitudo maksimum 7.4 mm dan durasi 172 detik.",
+            "image":"https://magma.vsi.esdm.go.id/img/crs/VEN_LWK20241007000306.png",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/db2a7a1f-8404-11ef-8afe-005056b54356/show"
+         }
+      },
+      "WIT":{
+         "11:48":{
+            "volcano_name":"Ibu",
+            "author":"Rivaldi Hasan",
+            "information":"Terjadi erupsi G. Ibu pada hari Senin, 07 Oktober 2024, pukul 11:48 WIT. Visual letusan tidak teramati.\n\nErupsi ini terekam di seismograf dengan amplitudo maksimum 18 mm dan durasi 45 detik.",
+            "image":"https://magma.vsi.esdm.go.id/img/crs/VEN_IBU20241007095446.png",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/831f4722-8457-11ef-8afe-005056b54356/show"
+         }
+      },
+      "WIB":{
+         "09:19":{
+            "volcano_name":"Semeru",
+            "author":"Ghufron Alwi",
+            "information":"Terjadi erupsi G. Semeru pada hari Senin, 07 Oktober 2024, pukul 09:19 WIB. Visual letusan tidak teramati.\n\nErupsi ini terekam di seismograf dengan amplitudo maksimum 22 mm dan durasi 100 detik.",
+            "image":"",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/ac3a89f2-8452-11ef-8afe-005056b54356/show"
+         },
+         "07:40":{
+            "volcano_name":"Semeru",
+            "author":"Ghufron Alwi",
+            "information":"Terjadi erupsi G. Semeru pada hari Senin, 07 Oktober 2024, pukul 07:40 WIB. Visual letusan tidak teramati.\n\nErupsi ini terekam di seismograf dengan amplitudo maksimum 23 mm dan durasi 120 detik.",
+            "image":"",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/fba99d45-8444-11ef-8afe-005056b54356/show"
+         }
+      }
+   },
+   "10-06-2024":{
+      "WIB":{
+         "16:40":{
+            "volcano_name":"Semeru",
+            "author":"Ghufron Alwi",
+            "information":"Terjadi erupsi G. Semeru pada hari Minggu, 06 Oktober 2024, pukul 16:40 WIB. Visual letusan tidak teramati.\n\nErupsi ini terekam di seismograf dengan amplitudo maksimum 22 mm dan durasi 112 detik.",
+            "image":"",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/3c9c368d-83c7-11ef-8afe-005056b54356/show"
+         },
+         "14:59":{
+            "volcano_name":"Semeru",
+            "author":"Ghufron Alwi",
+            "information":"Terjadi erupsi G. Semeru pada hari Minggu, 06 Oktober 2024, pukul 14:59 WIB. Visual letusan tidak teramati.\n\nErupsi ini terekam di seismograf dengan amplitudo maksimum 22 mm dan durasi 93 detik.",
+            "image":"",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/03029c71-83b9-11ef-8afe-005056b54356/show"
+         },
+         "13:49":{
+            "volcano_name":"Semeru",
+            "author":"Ghufron Alwi",
+            "information":"Terjadi erupsi G. Semeru pada hari Minggu, 06 Oktober 2024, pukul 13:49 WIB. Visual letusan tidak teramati.\n\nErupsi ini terekam di seismograf dengan amplitudo maksimum 22 mm dan durasi 122 detik.",
+            "image":"",
+            "detail":"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan/2ff660e3-83af-11ef-8afe-005056b54356/show"
+         }
+      }
+   }
+}
+```
 
 ## Level + Other Information
 This code will show you the level of the volcano, the website link and other info (such as date, recommendation, volcano info, and etc). It'll take about 1 minute to get the information (depending on internet and device)
 
 ```python
 import Magma
-print(Magma.magmadetail())
+print(Magma.magmaeruption())
 ```
 
 The output will look like this:
