@@ -1,6 +1,6 @@
 # Magma-Indonesia-API
 ![MagmaAPI](https://user-images.githubusercontent.com/111344809/216641859-80dd49db-c20a-4135-b06d-d68462235df7.png)
-Welcome to Magma-Indonesia-API! This code can give you information about volcano in Indonesia! We scraped the 'https://magma.esdm.go.id/v1/gunung-api/tingkat-aktivitas website to get this information. You might ask "what is this package for?". It has a lot of uses, you can use it for educational purposes or even create an early warning systems. For example, you can check out my [Discord bot project](https://www.gabrielbjb.my.id/id/Projek/Growtopia_Discord/), where users can monitor volcano activity through Discord.
+Welcome to Magma-Indonesia-API! This code can give you information about volcano in Indonesia! We scraped the 'https://magma.esdm.go.id/v1/gunung-api/tingkat-aktivitas website to get this information. You might ask "what is this package for?". It has a lot of uses, you can use it for educational purposes or even create an early warning systems. For example, you can check out my [Discord bot project](https://www.gabrielbjb.my.id/id/Projek/Pendeteksi_Gempa/), where users can monitor volcano activity through Discord.
 
 ## Download
 If you want to try this code, you can download it by writing this on CMD, PowerShell or Terminal
