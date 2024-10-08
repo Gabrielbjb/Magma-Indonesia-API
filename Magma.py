@@ -1,14 +1,9 @@
-import aiohttp, asyncio
+import requests
 from bs4 import BeautifulSoup
-
-async def link(link):
-    async with aiohttp.ClientSession() as session:
-        async with session.get(link) as resp:
-            return await resp.text()
 
 def magmalevelonly():
     result = {}
-    web = asyncio.run(link('https://magma.esdm.go.id/v1/gunung-api/tingkat-aktivitas'))
+    web = requests.get('https://magma.esdm.go.id/v1/gunung-api/tingkat-aktivitas').text
     HTMLResult = ((BeautifulSoup(web, "html.parser").find_all('div',  class_= "table-responsive")[0]).find('tbody'))
     linkcheck = 0
     judul2 = ""
@@ -37,7 +32,7 @@ def magmalevelonly():
 
 def magmaeruption(page = 1):
     result = {}
-    web = asyncio.run(link("https://magma.esdm.go.id/v1/gunung-api/informasi-letusan"))
+    web = requests.get('https://magma.esdm.go.id/v1/gunung-api/informasi-letusan').text
     HTMLResult = BeautifulSoup(web, "html.parser") 
     pageHTML = int(HTMLResult.find('div', class_="ui pagination menu").find_all('a')[7].get_text(strip=True))+1
     if page == "all":
@@ -56,7 +51,7 @@ def magmaeruption(page = 1):
     judul = ""
     checking = 0
     while checking < totalpage:
-        web = asyncio.run(link(f"https://magma.esdm.go.id/v1/gunung-api/informasi-letusan?page={checking+1}"))
+        web = requests.get(f'https://magma.esdm.go.id/v1/gunung-api/informasi-letusan?page={checking+1}').text
         HTMLResult = BeautifulSoup(web, "html.parser") 
         content = HTMLResult.find_all('div', class_="timeline-item")
         for i in content:
@@ -82,7 +77,6 @@ def magmaeruption(page = 1):
         checking += 1
     return result
 
-
 def magmadetail():
     result = magmalevelonly()
     for i in result:
@@ -106,3 +100,4 @@ def magmadetail():
             detailresult["recommendation"] = sameclass[2].get_text(strip=True)
             result[i][j]["detail"] = detailresult
     return result
+    
