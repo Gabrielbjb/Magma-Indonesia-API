@@ -77,21 +77,22 @@ def magmaeruption(page = 1):
         checking += 1
     return result
 
+
 def magmadetail():
     result = magmalevelonly()
     for i in result:
         for j in result[i]:
             detailresult = {}
-            web = asyncio.run(link(result[i][j]["link"]))
+            web = requests.get(result[i][j]["link"]).text
             HTMLResult = BeautifulSoup(web, "html.parser").find('div', class_="col-lg-12")
             detailresult["title"] = HTMLResult.find('h5', class_="card-title tx-dark tx-medium mg-b-10").get_text(strip=True)
             detailresult["author"] = (HTMLResult.find('p', class_="card-subtitle tx-normal mg-b-15").get_text(strip=True)).split(", ")[1]
             detailresult["location"] = HTMLResult.find('p', class_="col-lg-6 pd-0").get_text(strip=True)
-            try:
-                asyncio.run(link(HTMLResult.find('img', class_="img-fluid")['src']))
-                detailresult["image"] = None
-            except:
+            web = requests.get(HTMLResult.find('img', class_="img-fluid")['src'])
+            if web.status_code == 200:
                 detailresult["image"] = HTMLResult.find('img', class_="img-fluid")['src']
+            else:
+                detailresult["image"] = None
             detailresult["visual_observation"] = (HTMLResult.find('div', class_="media-body").find('p')).get_text(strip=True)
             detailresult["other_description"] = (HTMLResult.find('div', class_="media pd-30").find('p')).get_text(strip=True)
             sameclass = HTMLResult.find_all('div', class_="card pd-30")
@@ -100,4 +101,3 @@ def magmadetail():
             detailresult["recommendation"] = sameclass[2].get_text(strip=True)
             result[i][j]["detail"] = detailresult
     return result
-    
